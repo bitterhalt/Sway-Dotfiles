@@ -1,0 +1,13 @@
+#!/bin/sh
+
+#  Clean package cache
+printf "\n>> Clean package cache <<\n"
+sudo xbps-remove -O
+
+# Remove orphaned packages
+printf "\n>> remove orphaned packages <<\n"
+sudo xbps-remove -o
+
+# Remove unused flatpak packages
+printf "\n>> Remove unused flatpak packages <<\n"
+flatpak uninstall --unused
